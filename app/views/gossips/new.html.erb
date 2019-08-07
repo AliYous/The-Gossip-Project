@@ -1,0 +1,26 @@
+
+<% if @gossip.errors.any? %>
+    <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) : </p>
+    <ul>
+        <% @gossip.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+
+<%= form_tag(gossips_path, method: "post") do %>
+    <%= label_tag("Nom") %>
+    <%= text_field_tag(:first_name) %>
+
+    <%= label_tag("Prenom") %>
+    <%= text_field_tag(:last_name) %>
+
+    <%= label_tag("Titre") %>
+    <%= text_field_tag(:title) %>
+
+    <%= text_area_tag(:content, "Ecrit ton gossip", size: "30x10") %>
+
+    <%= submit_tag("Créer mon gossip") %>
+<% end %>
+  

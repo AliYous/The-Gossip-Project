@@ -1,8 +1,8 @@
-<% @gossips.each_with_index do |gossip,index| %>
+<% @gossips.each do |gossip| %>
     <div style="width: 170rem; margin: auto;">
         <div class="card" style="width: 60%;">
           <div class="card-body">
-            <h5 class="card-title"><a href="/gossip/<%=index+1%>"><%= gossip.title %></a></h5>
+            <h5 class="card-title"><a href= <%=gossip_path(gossip.id-1)%> > <%= gossip.title %></a></h5>
             <h6 class="card-subtitle mb-2 text-muted"><%= gossip.user.first_name %></h6>
             <p class="card-text"><%= gossip.content %></p>
           </div>

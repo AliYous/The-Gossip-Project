@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">
+    <a href=<%=user_path(@user_id-1)%> ><%=@first_name%> <%=@last_name%></a>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title"> <%=@title %> </h4>
+    <p class="card-text"> <%=@content%> </p>
+    <a href="#" class="btn btn-primary">Editer le gossip</a>
+  </div>
+</div>
+
+#<%=user_path(@first_name)%>
