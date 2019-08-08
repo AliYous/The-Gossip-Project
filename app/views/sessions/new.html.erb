@@ -1,0 +1,26 @@
+
+<% if @session.errors.any? %>
+<p>Erreurs : </p>
+<ul>
+    <% @session.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+</ul>
+<% end %>
+
+
+<%= form_tag(sessions_path, method: "post") do %>
+<%= label_tag("Nom") %>
+<%= text_field_tag(:first_name) %>
+
+<%= label_tag("Prenom") %>
+<%= text_field_tag(:last_name) %>
+
+<%= label_tag("Email") %>
+<%= text_field_tag(:email) %>
+
+<%= label_tag("Password") %>
+<%= text_field_tag(:password) %>
+
+<%= submit_tag("Créer mon compte") %>
+<% end %>
