@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   end
   
   def create 
-    puts params
     @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
     if @user.save
       redirect_to welcome_path(@user.first_name)
@@ -24,5 +23,4 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
 end
